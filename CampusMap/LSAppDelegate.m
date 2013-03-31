@@ -9,6 +9,15 @@
 #import "LSAppDelegate.h"
 #import "CampusMapViewController.h"
 #import "CampusPOIViewController.h"
+#import "LSLibrary.h"
+#import "LSRestaurant.h"
+#import "LSPrinter.h"
+
+@interface LSAppDelegate (){
+    NSDictionary *_poiDictionary;
+}
+
+@end
 
 @implementation LSAppDelegate
 
@@ -70,6 +79,89 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+}
+
+- (NSArray *)allPOIs
+{
+	NSMutableArray *pois = [[NSMutableArray alloc] initWithArray:self.libraryPOIs];
+	[pois addObjectsFromArray:self.restaurantPOIs];
+	[pois addObjectsFromArray:self.printerPOIs];
+	
+	return (NSArray *)pois;
+}
+
+- (NSArray *)libraryPOIs
+{
+	return [self.poiDictionary valueForKey:@"LibraryPOI"];
+}
+
+- (NSArray *)restaurantPOIs
+{
+	return [self.poiDictionary valueForKey:@"RestaurantPOI"];
+}
+
+- (NSArray *)printerPOIs
+{
+	return [self.poiDictionary valueForKey:@"PrinterPOI"];
+}
+
+- (NSDictionary *)poiDictionary
+{
+	if (_poiDictionary == nil) {
+		_poiDictionary = [[NSDictionary alloc] initWithDictionary:[self readPOIList]];
+	}
+    return _poiDictionary;
+}
+
+- (NSDictionary *)readPOIList
+{
+	NSMutableArray *printerArray = [[NSMutableArray alloc] initWithCapacity:10];
+	NSMutableArray *restaurantArray = [[NSMutableArray alloc] initWithCapacity:10];
+	NSMutableArray *libraryArray = [[NSMutableArray alloc] initWithCapacity:10];
+	
+	NSString *poiFilePath = [[NSBundle mainBundle] pathForResource:@"POI" ofType:@"plist"];
+	NSArray *poiFileArray = [NSArray arrayWithContentsOfFile:poiFilePath];
+	
+#define POI_LIB 0
+#define POI_REST 1
+#define POI_PRINTER 2
+	NSDictionary *aPOI;
+	NSMutableArray *targetArray;
+	Class poiClass;
+	for (aPOI in poiFileArray) {
+		int poiType = [[aPOI valueForKey:@"type"] intValue];
+		switch (poiType) {
+			case POI_LIB:
+				poiClass = [LSLibrary class];
+				targetArray = libraryArray;
+				break;
+			case POI_REST:
+				poiClass = [LSRestaurant class];
+				targetArray = restaurantArray;
+				break;
+			case POI_PRINTER:
+				poiClass = [LSPrinter class];
+				targetArray = printerArray;
+				break;
+		}
+		LSLocation *newLocation = [[poiClass alloc] init];
+		CLLocationDegrees latitude = [[aPOI valueForKey:@"latitude"] doubleValue];
+		CLLocationDegrees longitude = [[aPOI valueForKey:@"longitude"] doubleValue];
+		newLocation.latitude = latitude;
+		newLocation.longitude = longitude;
+        
+		NSMutableArray *allKeys = [NSMutableArray arrayWithArray:[aPOI allKeys]];
+		NSArray *excludeKeys = [NSArray arrayWithObjects:@"type", @"latitude",@"longitude", nil];
+		[allKeys removeObjectsInArray:excludeKeys];
+		NSString *key;
+		for (key in allKeys) {
+			[newLocation setValue:[aPOI valueForKey:key] forKey:key];
+		}
+		[targetArray addObject:newLocation];
+	}
+	
+	NSDictionary *returnDictionary = [NSDictionary dictionaryWithObjectsAndKeys:libraryArray, @"LibraryPOI",restaurantArray, @"RestaurantPOI", printerArray, @"PrinterPOI", nil];
+	return returnDictionary;
 }
 
 @end

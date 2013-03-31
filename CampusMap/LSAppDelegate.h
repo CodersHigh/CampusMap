@@ -10,6 +10,14 @@
 
 @interface LSAppDelegate : UIResponder <UIApplicationDelegate>
 
+- (NSDictionary *)readPOIList;
+
 @property (strong, nonatomic) UIWindow *window;
+
+@property (strong, readonly) NSDictionary *poiDictionary;
+@property (weak, readonly) NSArray *allPOIs;
+@property (weak, readonly) NSArray *libraryPOIs;
+@property (weak, readonly) NSArray *restaurantPOIs;
+@property (weak, readonly) NSArray *printerPOIs;
 
 @end
