@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C3A9BED1417CD0000F72362 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3A9BEC1417CD0000F72362 /* UIKit.framework */; };
+		2C3A9BEF1417CD0000F72362 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3A9BEE1417CD0000F72362 /* Foundation.framework */; };
+		2C3A9BF51417CD0000F72362 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C3A9BF31417CD0000F72362 /* InfoPlist.strings */; };
+		2C3A9BF71417CD0000F72362 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3A9BF61417CD0000F72362 /* main.m */; };
+		2C3A9BFB1417CD0000F72362 /* LSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3A9BFA1417CD0000F72362 /* LSAppDelegate.m */; };
+		2C585E0D141856F200812FB9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C585E0C141856F200812FB9 /* CoreLocation.framework */; };
+		2C585E101418571000812FB9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C585E0F1418571000812FB9 /* MapKit.framework */; };
+		2C585E191418652D00812FB9 /* CampusMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C585E171418652D00812FB9 /* CampusMapViewController.m */; };
+		2C585E1A1418652D00812FB9 /* CampusMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C585E181418652D00812FB9 /* CampusMapViewController.xib */; };
+		2C585E1E1418654E00812FB9 /* CampusPOIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C585E1C1418654E00812FB9 /* CampusPOIViewController.m */; };
+		2C585E1F1418654E00812FB9 /* CampusPOIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C585E1D1418654E00812FB9 /* CampusPOIViewController.xib */; };
+		2CB4B47B141F316B004D264D /* button_library.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B456141F316B004D264D /* button_library.png */; };
+		2CB4B47C141F316B004D264D /* button_library@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B457141F316B004D264D /* button_library@2x.png */; };
+		2CB4B47D141F316B004D264D /* button_printer.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B458141F316B004D264D /* button_printer.png */; };
+		2CB4B47E141F316B004D264D /* button_printer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B459141F316B004D264D /* button_printer@2x.png */; };
+		2CB4B47F141F316B004D264D /* button_restaurant.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B45A141F316B004D264D /* button_restaurant.png */; };
+		2CB4B480141F316B004D264D /* button_restaurant@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B45B141F316B004D264D /* button_restaurant@2x.png */; };
+		2CB4B481141F316B004D264D /* campus_map_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B45C141F316B004D264D /* campus_map_bg.png */; };
+		2CB4B482141F316B004D264D /* campus_map_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B45D141F316B004D264D /* campus_map_bg@2x.png */; };
+		2CB4B483141F316B004D264D /* cell_selectedWithArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B45E141F316B004D264D /* cell_selectedWithArrow.png */; };
+		2CB4B484141F316B004D264D /* cell_selectedWithArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B45F141F316B004D264D /* cell_selectedWithArrow@2x.png */; };
+		2CB4B485141F316B004D264D /* cell_unselectedWithArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B460141F316B004D264D /* cell_unselectedWithArrow.png */; };
+		2CB4B486141F316B004D264D /* cell_unselectedWithArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B461141F316B004D264D /* cell_unselectedWithArrow@2x.png */; };
+		2CB4B487141F316B004D264D /* icon_library.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B462141F316B004D264D /* icon_library.png */; };
+		2CB4B488141F316B004D264D /* icon_library@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B463141F316B004D264D /* icon_library@2x.png */; };
+		2CB4B489141F316B004D264D /* icon_printer.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B464141F316B004D264D /* icon_printer.png */; };
+		2CB4B48A141F316B004D264D /* icon_printer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B465141F316B004D264D /* icon_printer@2x.png */; };
+		2CB4B48B141F316B004D264D /* icon_restaurant.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B466141F316B004D264D /* icon_restaurant.png */; };
+		2CB4B48C141F316B004D264D /* icon_restaurant@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B467141F316B004D264D /* icon_restaurant@2x.png */; };
+		2CB4B48D141F316B004D264D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B468141F316B004D264D /* icon.png */; };
+		2CB4B48E141F316B004D264D /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B469141F316B004D264D /* icon@2x.png */; };
+		2CB4B48F141F316B004D264D /* library_annotation.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B46A141F316B004D264D /* library_annotation.png */; };
+		2CB4B490141F316B004D264D /* library_annotation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B46B141F316B004D264D /* library_annotation@2x.png */; };
+		2CB4B491141F316B004D264D /* map_ar_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B46C141F316B004D264D /* map_ar_button.png */; };
+		2CB4B492141F316B004D264D /* map_ar_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B46D141F316B004D264D /* map_ar_button@2x.png */; };
+		2CB4B493141F316B004D264D /* map_view_tab_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B46E141F316B004D264D /* map_view_tab_icon.png */; };
+		2CB4B494141F316B004D264D /* map_view_tab_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B46F141F316B004D264D /* map_view_tab_icon@2x.png */; };
+		2CB4B495141F316B004D264D /* map_x_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B470141F316B004D264D /* map_x_button.png */; };
+		2CB4B496141F316B004D264D /* map_x_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B471141F316B004D264D /* map_x_button@2x.png */; };
+		2CB4B497141F316B004D264D /* poi_view_tab_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B472141F316B004D264D /* poi_view_tab_icon.png */; };
+		2CB4B498141F316B004D264D /* poi_view_tab_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B473141F316B004D264D /* poi_view_tab_icon@2x.png */; };
+		2CB4B499141F316B004D264D /* POI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B474141F316B004D264D /* POI.plist */; };
+		2CB4B49A141F316B004D264D /* printer_annotation.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B475141F316B004D264D /* printer_annotation.png */; };
+		2CB4B49B141F316B004D264D /* printer_annotation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B476141F316B004D264D /* printer_annotation@2x.png */; };
+		2CB4B49C141F316B004D264D /* restaurant_annotation.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B477141F316B004D264D /* restaurant_annotation.png */; };
+		2CB4B49D141F316B004D264D /* restaurant_annotation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B478141F316B004D264D /* restaurant_annotation@2x.png */; };
+		2CB4B49E141F316B004D264D /* subcell.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B479141F316B004D264D /* subcell.png */; };
+		2CB4B49F141F316B004D264D /* subcell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B47A141F316B004D264D /* subcell@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2C3A9BE81417CD0000F72362 /* CampusMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C3A9BEC1417CD0000F72362 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2C3A9BEE1417CD0000F72362 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2C3A9BF21417CD0000F72362 /* CampusMap-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CampusMap-Info.plist"; sourceTree = "<group>"; };
+		2C3A9BF41417CD0000F72362 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2C3A9BF61417CD0000F72362 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2C3A9BF81417CD0000F72362 /* CampusMap-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CampusMap-Prefix.pch"; sourceTree = "<group>"; };
+		2C3A9BF91417CD0000F72362 /* LSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSAppDelegate.h; sourceTree = "<group>"; };
+		2C3A9BFA1417CD0000F72362 /* LSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSAppDelegate.m; sourceTree = "<group>"; };
+		2C585E0C141856F200812FB9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2C585E0F1418571000812FB9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2C585E161418652D00812FB9 /* CampusMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampusMapViewController.h; sourceTree = "<group>"; };
+		2C585E171418652D00812FB9 /* CampusMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampusMapViewController.m; sourceTree = "<group>"; };
+		2C585E181418652D00812FB9 /* CampusMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CampusMapViewController.xib; sourceTree = "<group>"; };
+		2C585E1B1418654E00812FB9 /* CampusPOIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampusPOIViewController.h; sourceTree = "<group>"; };
+		2C585E1C1418654E00812FB9 /* CampusPOIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampusPOIViewController.m; sourceTree = "<group>"; };
+		2C585E1D1418654E00812FB9 /* CampusPOIViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CampusPOIViewController.xib; sourceTree = "<group>"; };
+		2CB4B456141F316B004D264D /* button_library.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_library.png; sourceTree = "<group>"; };
+		2CB4B457141F316B004D264D /* button_library@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_library@2x.png"; sourceTree = "<group>"; };
+		2CB4B458141F316B004D264D /* button_printer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_printer.png; sourceTree = "<group>"; };
+		2CB4B459141F316B004D264D /* button_printer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_printer@2x.png"; sourceTree = "<group>"; };
+		2CB4B45A141F316B004D264D /* button_restaurant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_restaurant.png; sourceTree = "<group>"; };
+		2CB4B45B141F316B004D264D /* button_restaurant@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_restaurant@2x.png"; sourceTree = "<group>"; };
+		2CB4B45C141F316B004D264D /* campus_map_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = campus_map_bg.png; sourceTree = "<group>"; };
+		2CB4B45D141F316B004D264D /* campus_map_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "campus_map_bg@2x.png"; sourceTree = "<group>"; };
+		2CB4B45E141F316B004D264D /* cell_selectedWithArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_selectedWithArrow.png; sourceTree = "<group>"; };
+		2CB4B45F141F316B004D264D /* cell_selectedWithArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_selectedWithArrow@2x.png"; sourceTree = "<group>"; };
+		2CB4B460141F316B004D264D /* cell_unselectedWithArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_unselectedWithArrow.png; sourceTree = "<group>"; };
+		2CB4B461141F316B004D264D /* cell_unselectedWithArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_unselectedWithArrow@2x.png"; sourceTree = "<group>"; };
+		2CB4B462141F316B004D264D /* icon_library.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_library.png; sourceTree = "<group>"; };
+		2CB4B463141F316B004D264D /* icon_library@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_library@2x.png"; sourceTree = "<group>"; };
+		2CB4B464141F316B004D264D /* icon_printer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_printer.png; sourceTree = "<group>"; };
+		2CB4B465141F316B004D264D /* icon_printer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_printer@2x.png"; sourceTree = "<group>"; };
+		2CB4B466141F316B004D264D /* icon_restaurant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_restaurant.png; sourceTree = "<group>"; };
+		2CB4B467141F316B004D264D /* icon_restaurant@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_restaurant@2x.png"; sourceTree = "<group>"; };
+		2CB4B468141F316B004D264D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		2CB4B469141F316B004D264D /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		2CB4B46A141F316B004D264D /* library_annotation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = library_annotation.png; sourceTree = "<group>"; };
+		2CB4B46B141F316B004D264D /* library_annotation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "library_annotation@2x.png"; sourceTree = "<group>"; };
+		2CB4B46C141F316B004D264D /* map_ar_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_ar_button.png; sourceTree = "<group>"; };
+		2CB4B46D141F316B004D264D /* map_ar_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_ar_button@2x.png"; sourceTree = "<group>"; };
+		2CB4B46E141F316B004D264D /* map_view_tab_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_view_tab_icon.png; sourceTree = "<group>"; };
+		2CB4B46F141F316B004D264D /* map_view_tab_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_view_tab_icon@2x.png"; sourceTree = "<group>"; };
+		2CB4B470141F316B004D264D /* map_x_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_x_button.png; sourceTree = "<group>"; };
+		2CB4B471141F316B004D264D /* map_x_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_x_button@2x.png"; sourceTree = "<group>"; };
+		2CB4B472141F316B004D264D /* poi_view_tab_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poi_view_tab_icon.png; sourceTree = "<group>"; };
+		2CB4B473141F316B004D264D /* poi_view_tab_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "poi_view_tab_icon@2x.png"; sourceTree = "<group>"; };
+		2CB4B474141F316B004D264D /* POI.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = POI.plist; sourceTree = "<group>"; };
+		2CB4B475141F316B004D264D /* printer_annotation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = printer_annotation.png; sourceTree = "<group>"; };
+		2CB4B476141F316B004D264D /* printer_annotation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "printer_annotation@2x.png"; sourceTree = "<group>"; };
+		2CB4B477141F316B004D264D /* restaurant_annotation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restaurant_annotation.png; sourceTree = "<group>"; };
+		2CB4B478141F316B004D264D /* restaurant_annotation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restaurant_annotation@2x.png"; sourceTree = "<group>"; };
+		2CB4B479141F316B004D264D /* subcell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = subcell.png; sourceTree = "<group>"; };
+		2CB4B47A141F316B004D264D /* subcell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "subcell@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C3A9BE51417CD0000F72362 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C585E101418571000812FB9 /* MapKit.framework in Frameworks */,
+				2C585E0D141856F200812FB9 /* CoreLocation.framework in Frameworks */,
+				2C3A9BED1417CD0000F72362 /* UIKit.framework in Frameworks */,
+				2C3A9BEF1417CD0000F72362 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C3A9BDD1417CCFF00F72362 = {
+			isa = PBXGroup;
+			children = (
+				2C3A9BF01417CD0000F72362 /* CampusMap */,
+				2C3A9BEB1417CD0000F72362 /* Frameworks */,
+				2C3A9BE91417CD0000F72362 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2C3A9BE91417CD0000F72362 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C3A9BE81417CD0000F72362 /* CampusMap.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C3A9BEB1417CD0000F72362 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C585E0F1418571000812FB9 /* MapKit.framework */,
+				2C585E0C141856F200812FB9 /* CoreLocation.framework */,
+				2C3A9BEC1417CD0000F72362 /* UIKit.framework */,
+				2C3A9BEE1417CD0000F72362 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2C3A9BF01417CD0000F72362 /* CampusMap */ = {
+			isa = PBXGroup;
+			children = (
+				2C3A9BF91417CD0000F72362 /* LSAppDelegate.h */,
+				2C3A9BFA1417CD0000F72362 /* LSAppDelegate.m */,
+				2C585E1B1418654E00812FB9 /* CampusPOIViewController.h */,
+				2C585E1C1418654E00812FB9 /* CampusPOIViewController.m */,
+				2C585E1D1418654E00812FB9 /* CampusPOIViewController.xib */,
+				2C585E161418652D00812FB9 /* CampusMapViewController.h */,
+				2C585E171418652D00812FB9 /* CampusMapViewController.m */,
+				2C585E181418652D00812FB9 /* CampusMapViewController.xib */,
+				2C3A9BF11417CD0000F72362 /* Supporting Files */,
+			);
+			path = CampusMap;
+			sourceTree = "<group>";
+		};
+		2C3A9BF11417CD0000F72362 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2CB4B456141F316B004D264D /* button_library.png */,
+				2CB4B457141F316B004D264D /* button_library@2x.png */,
+				2CB4B458141F316B004D264D /* button_printer.png */,
+				2CB4B459141F316B004D264D /* button_printer@2x.png */,
+				2CB4B45A141F316B004D264D /* button_restaurant.png */,
+				2CB4B45B141F316B004D264D /* button_restaurant@2x.png */,
+				2CB4B45C141F316B004D264D /* campus_map_bg.png */,
+				2CB4B45D141F316B004D264D /* campus_map_bg@2x.png */,
+				2CB4B45E141F316B004D264D /* cell_selectedWithArrow.png */,
+				2CB4B45F141F316B004D264D /* cell_selectedWithArrow@2x.png */,
+				2CB4B460141F316B004D264D /* cell_unselectedWithArrow.png */,
+				2CB4B461141F316B004D264D /* cell_unselectedWithArrow@2x.png */,
+				2CB4B462141F316B004D264D /* icon_library.png */,
+				2CB4B463141F316B004D264D /* icon_library@2x.png */,
+				2CB4B464141F316B004D264D /* icon_printer.png */,
+				2CB4B465141F316B004D264D /* icon_printer@2x.png */,
+				2CB4B466141F316B004D264D /* icon_restaurant.png */,
+				2CB4B467141F316B004D264D /* icon_restaurant@2x.png */,
+				2CB4B468141F316B004D264D /* icon.png */,
+				2CB4B469141F316B004D264D /* icon@2x.png */,
+				2CB4B46A141F316B004D264D /* library_annotation.png */,
+				2CB4B46B141F316B004D264D /* library_annotation@2x.png */,
+				2CB4B46C141F316B004D264D /* map_ar_button.png */,
+				2CB4B46D141F316B004D264D /* map_ar_button@2x.png */,
+				2CB4B46E141F316B004D264D /* map_view_tab_icon.png */,
+				2CB4B46F141F316B004D264D /* map_view_tab_icon@2x.png */,
+				2CB4B470141F316B004D264D /* map_x_button.png */,
+				2CB4B471141F316B004D264D /* map_x_button@2x.png */,
+				2CB4B472141F316B004D264D /* poi_view_tab_icon.png */,
+				2CB4B473141F316B004D264D /* poi_view_tab_icon@2x.png */,
+				2CB4B474141F316B004D264D /* POI.plist */,
+				2CB4B475141F316B004D264D /* printer_annotation.png */,
+				2CB4B476141F316B004D264D /* printer_annotation@2x.png */,
+				2CB4B477141F316B004D264D /* restaurant_annotation.png */,
+				2CB4B478141F316B004D264D /* restaurant_annotation@2x.png */,
+				2CB4B479141F316B004D264D /* subcell.png */,
+				2CB4B47A141F316B004D264D /* subcell@2x.png */,
+				2C3A9BF21417CD0000F72362 /* CampusMap-Info.plist */,
+				2C3A9BF31417CD0000F72362 /* InfoPlist.strings */,
+				2C3A9BF61417CD0000F72362 /* main.m */,
+				2C3A9BF81417CD0000F72362 /* CampusMap-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2C3A9BE71417CD0000F72362 /* CampusMap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C3A9BFE1417CD0000F72362 /* Build configuration list for PBXNativeTarget "CampusMap" */;
+			buildPhases = (
+				2C3A9BE41417CD0000F72362 /* Sources */,
+				2C3A9BE51417CD0000F72362 /* Frameworks */,
+				2C3A9BE61417CD0000F72362 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CampusMap;
+			productName = CampusMap;
+			productReference = 2C3A9BE81417CD0000F72362 /* CampusMap.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C3A9BDF1417CCFF00F72362 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = LingoStar;
+			};
+			buildConfigurationList = 2C3A9BE21417CCFF00F72362 /* Build configuration list for PBXProject "CampusMap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2C3A9BDD1417CCFF00F72362;
+			productRefGroup = 2C3A9BE91417CD0000F72362 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C3A9BE71417CD0000F72362 /* CampusMap */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C3A9BE61417CD0000F72362 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C3A9BF51417CD0000F72362 /* InfoPlist.strings in Resources */,
+				2C585E1A1418652D00812FB9 /* CampusMapViewController.xib in Resources */,
+				2C585E1F1418654E00812FB9 /* CampusPOIViewController.xib in Resources */,
+				2CB4B47B141F316B004D264D /* button_library.png in Resources */,
+				2CB4B47C141F316B004D264D /* button_library@2x.png in Resources */,
+				2CB4B47D141F316B004D264D /* button_printer.png in Resources */,
+				2CB4B47E141F316B004D264D /* button_printer@2x.png in Resources */,
+				2CB4B47F141F316B004D264D /* button_restaurant.png in Resources */,
+				2CB4B480141F316B004D264D /* button_restaurant@2x.png in Resources */,
+				2CB4B481141F316B004D264D /* campus_map_bg.png in Resources */,
+				2CB4B482141F316B004D264D /* campus_map_bg@2x.png in Resources */,
+				2CB4B483141F316B004D264D /* cell_selectedWithArrow.png in Resources */,
+				2CB4B484141F316B004D264D /* cell_selectedWithArrow@2x.png in Resources */,
+				2CB4B485141F316B004D264D /* cell_unselectedWithArrow.png in Resources */,
+				2CB4B486141F316B004D264D /* cell_unselectedWithArrow@2x.png in Resources */,
+				2CB4B487141F316B004D264D /* icon_library.png in Resources */,
+				2CB4B488141F316B004D264D /* icon_library@2x.png in Resources */,
+				2CB4B489141F316B004D264D /* icon_printer.png in Resources */,
+				2CB4B48A141F316B004D264D /* icon_printer@2x.png in Resources */,
+				2CB4B48B141F316B004D264D /* icon_restaurant.png in Resources */,
+				2CB4B48C141F316B004D264D /* icon_restaurant@2x.png in Resources */,
+				2CB4B48D141F316B004D264D /* icon.png in Resources */,
+				2CB4B48E141F316B004D264D /* icon@2x.png in Resources */,
+				2CB4B48F141F316B004D264D /* library_annotation.png in Resources */,
+				2CB4B490141F316B004D264D /* library_annotation@2x.png in Resources */,
+				2CB4B491141F316B004D264D /* map_ar_button.png in Resources */,
+				2CB4B492141F316B004D264D /* map_ar_button@2x.png in Resources */,
+				2CB4B493141F316B004D264D /* map_view_tab_icon.png in Resources */,
+				2CB4B494141F316B004D264D /* map_view_tab_icon@2x.png in Resources */,
+				2CB4B495141F316B004D264D /* map_x_button.png in Resources */,
+				2CB4B496141F316B004D264D /* map_x_button@2x.png in Resources */,
+				2CB4B497141F316B004D264D /* poi_view_tab_icon.png in Resources */,
+				2CB4B498141F316B004D264D /* poi_view_tab_icon@2x.png in Resources */,
+				2CB4B499141F316B004D264D /* POI.plist in Resources */,
+				2CB4B49A141F316B004D264D /* printer_annotation.png in Resources */,
+				2CB4B49B141F316B004D264D /* printer_annotation@2x.png in Resources */,
+				2CB4B49C141F316B004D264D /* restaurant_annotation.png in Resources */,
+				2CB4B49D141F316B004D264D /* restaurant_annotation@2x.png in Resources */,
+				2CB4B49E141F316B004D264D /* subcell.png in Resources */,
+				2CB4B49F141F316B004D264D /* subcell@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C3A9BE41417CD0000F72362 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C3A9BF71417CD0000F72362 /* main.m in Sources */,
+				2C3A9BFB1417CD0000F72362 /* LSAppDelegate.m in Sources */,
+				2C585E191418652D00812FB9 /* CampusMapViewController.m in Sources */,
+				2C585E1E1418654E00812FB9 /* CampusPOIViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2C3A9BF31417CD0000F72362 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C3A9BF41417CD0000F72362 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2C3A9BFC1417CD0000F72362 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2C3A9BFD1417CD0000F72362 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2C3A9BFF1417CD0000F72362 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CampusMap/CampusMap-Prefix.pch";
+				INFOPLIST_FILE = "CampusMap/CampusMap-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2C3A9C001417CD0000F72362 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CampusMap/CampusMap-Prefix.pch";
+				INFOPLIST_FILE = "CampusMap/CampusMap-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C3A9BE21417CCFF00F72362 /* Build configuration list for PBXProject "CampusMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C3A9BFC1417CD0000F72362 /* Debug */,
+				2C3A9BFD1417CD0000F72362 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C3A9BFE1417CD0000F72362 /* Build configuration list for PBXNativeTarget "CampusMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C3A9BFF1417CD0000F72362 /* Debug */,
+				2C3A9C001417CD0000F72362 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2C3A9BDF1417CCFF00F72362 /* Project object */;
+}
