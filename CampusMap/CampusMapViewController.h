@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @interface CampusMapViewController : UIViewController
+
+- (IBAction)poiUpdate:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UISegmentedControl *poiTypeSegControl;
+@property (strong, nonatomic) IBOutlet MKMapView *campusMapView;
 
 @end
