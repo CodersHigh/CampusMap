@@ -59,6 +59,8 @@
 		2CB4B49D141F316B004D264D /* restaurant_annotation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B478141F316B004D264D /* restaurant_annotation@2x.png */; };
 		2CB4B49E141F316B004D264D /* subcell.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B479141F316B004D264D /* subcell.png */; };
 		2CB4B49F141F316B004D264D /* subcell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B47A141F316B004D264D /* subcell@2x.png */; };
+		2CCD57A6170A871700FBB699 /* POITypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD57A3170A871700FBB699 /* POITypeCell.m */; };
+		2CCD57A7170A871700FBB699 /* POIItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD57A5170A871700FBB699 /* POIItemCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +126,11 @@
 		2CB4B478141F316B004D264D /* restaurant_annotation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restaurant_annotation@2x.png"; sourceTree = "<group>"; };
 		2CB4B479141F316B004D264D /* subcell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = subcell.png; sourceTree = "<group>"; };
 		2CB4B47A141F316B004D264D /* subcell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "subcell@2x.png"; sourceTree = "<group>"; };
+		2CCD57A2170A871700FBB699 /* POITypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POITypeCell.h; sourceTree = "<group>"; };
+		2CCD57A3170A871700FBB699 /* POITypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POITypeCell.m; sourceTree = "<group>"; };
+		2CCD57A4170A871700FBB699 /* POIItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POIItemCell.h; sourceTree = "<group>"; };
+		2CCD57A5170A871700FBB699 /* POIItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POIItemCell.m; sourceTree = "<group>"; };
+		2CCD57A8170A878400FBB699 /* Function.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Function.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +195,11 @@
 				2C585E161418652D00812FB9 /* CampusMapViewController.h */,
 				2C585E171418652D00812FB9 /* CampusMapViewController.m */,
 				2C585E181418652D00812FB9 /* CampusMapViewController.xib */,
+				2CCD57A8170A878400FBB699 /* Function.h */,
+				2CCD57A2170A871700FBB699 /* POITypeCell.h */,
+				2CCD57A3170A871700FBB699 /* POITypeCell.m */,
+				2CCD57A4170A871700FBB699 /* POIItemCell.h */,
+				2CCD57A5170A871700FBB699 /* POIItemCell.m */,
 				2C3A9BF11417CD0000F72362 /* Supporting Files */,
 			);
 			path = CampusMap;
@@ -350,6 +362,8 @@
 				2C2E182B170A6D8C00AA4DBA /* LSLocation.m in Sources */,
 				2C2E182C170A6D8C00AA4DBA /* LSPrinter.m in Sources */,
 				2C2E182D170A6D8C00AA4DBA /* LSRestaurant.m in Sources */,
+				2CCD57A6170A871700FBB699 /* POITypeCell.m in Sources */,
+				2CCD57A7170A871700FBB699 /* POIItemCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

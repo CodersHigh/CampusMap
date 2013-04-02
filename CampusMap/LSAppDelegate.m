@@ -122,20 +122,17 @@
 	NSString *poiFilePath = [[NSBundle mainBundle] pathForResource:@"POI" ofType:@"plist"];
 	NSArray *poiFileArray = [NSArray arrayWithContentsOfFile:poiFilePath];
 	
-#define POI_LIB 0
-#define POI_REST 1
-#define POI_PRINTER 2
 	NSDictionary *aPOI;
 	NSMutableArray *targetArray;
 	Class poiClass;
 	for (aPOI in poiFileArray) {
 		int poiType = [[aPOI valueForKey:@"type"] intValue];
 		switch (poiType) {
-			case POI_LIB:
+			case POI_LIBRARY:
 				poiClass = [LSLibrary class];
 				targetArray = libraryArray;
 				break;
-			case POI_REST:
+			case POI_RESTAURANT:
 				poiClass = [LSRestaurant class];
 				targetArray = restaurantArray;
 				break;

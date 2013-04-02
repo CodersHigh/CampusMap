@@ -11,6 +11,11 @@
 #import "LSLibrary.h"
 #import "LSRestaurant.h"
 #import "LSPrinter.h"
+#import "POITypeCell.h"
+#import "POIItemCell.h"
+
+#define TypeCellHeight 52
+#define ItemCellHeight 47
 
 @interface CampusPOIViewController (){
     int _titleRow[3];
@@ -148,34 +153,67 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *TypeCellIdentifier = @"TypeCell";
+	static NSString *ItemCellIdentifier = @"ItemCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    NSString *identifier;
+	if (indexPath.row == _titleRow[POI_LIBRARY] ||
+        indexPath.row == _titleRow[POI_RESTAURANT] ||
+        indexPath.row == _titleRow[POI_PRINTER]) {
+		identifier = TypeCellIdentifier;
+	} else {
+		identifier = ItemCellIdentifier;
+    }
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        Class cellClass;
+        if ([identifier isEqualToString:@"TypeCell"]){
+            cellClass = [POITypeCell class];
+        } else {
+            cellClass = [POIItemCell class];
+        }
+        cell = [[cellClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
     int rowNum = indexPath.row;
-	if (rowNum == _titleRow[0]){
-		cell.textLabel.text = @"Library";
-	} else if ( _titleRow[0] < rowNum && rowNum < _titleRow[1]) {
+    if (rowNum == _titleRow[POI_LIBRARY]){
+		[(POITypeCell *)cell setPoiType:POI_LIBRARY];
+        [(POITypeCell *)cell setNumberOfItems:self.numOfLibrary];
+	} else if ( rowNum == _titleRow[POI_RESTAURANT] ) {
+		[(POITypeCell *)cell setPoiType:POI_RESTAURANT];
+        [(POITypeCell *)cell setNumberOfItems:self.numOfRestaurant];
+	} else if (rowNum == _titleRow[POI_PRINTER]) {
+		[(POITypeCell *)cell setPoiType:POI_PRINTER];
+        [(POITypeCell *)cell setNumberOfItems:self.numOfPrinter];
+	} else if ( _titleRow[POI_LIBRARY] < rowNum && rowNum < _titleRow[POI_RESTAURANT]) {
 		LSLibrary *currLibrary = [[self appDelegate].libraryPOIs  objectAtIndex:(rowNum-1)];
-		cell.textLabel.text = currLibrary.location;
-	} else if ( rowNum == _titleRow[1] ) {
-		cell.textLabel.text = @"Restaurant";
-	} else if ( _titleRow[1] < rowNum && rowNum < _titleRow[2]) {
+        [(POIItemCell *)cell setPoiLocation:currLibrary];
+	}  else if ( _titleRow[POI_RESTAURANT] < rowNum && rowNum < _titleRow[POI_PRINTER]) {
 		int index = rowNum - _titleRow[1];
 		LSRestaurant *currRestaurant = [[self appDelegate].restaurantPOIs objectAtIndex:index-1];
-		cell.textLabel.text = currRestaurant.restaurantName;
-	} else if (rowNum == _titleRow[2]) {
-		cell.textLabel.text = @"Printer";
-	} else if (rowNum > _titleRow [2]) {
-		int index = rowNum - _titleRow[2];
+		[(POIItemCell *)cell setPoiLocation:currRestaurant];
+	} else if (rowNum > _titleRow [POI_PRINTER]) {
+		int index = rowNum - _titleRow[POI_PRINTER];
 		LSPrinter *currPrinter = [[self appDelegate].printerPOIs objectAtIndex:index-1];
-		cell.textLabel.text = currPrinter.location;
+		[(POIItemCell *)cell setPoiLocation:currPrinter];
 	}
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	int rowNum = indexPath.row;
+	CGFloat height;
+    if (rowNum == _titleRow[POI_LIBRARY] ||
+        rowNum == _titleRow[POI_RESTAURANT] ||
+        rowNum == _titleRow[POI_PRINTER])
+		height = TypeCellHeight;
+	else
+		height = ItemCellHeight;
+    
+	return height;
 }
 
 /*
