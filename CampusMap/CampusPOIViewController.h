@@ -10,4 +10,13 @@
 
 @interface CampusPOIViewController : UITableViewController
 
+@property BOOL libraryExpanded;
+@property BOOL restaurantExpanded;
+@property BOOL printerExpanded;
+
+@property (readonly) int numOfLibrary;
+@property (readonly) int numOfRestaurant;
+@property (readonly) int numOfPrinter;
+
+
 @end

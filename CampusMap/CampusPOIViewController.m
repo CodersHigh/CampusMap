@@ -7,6 +7,17 @@
 //
 
 #import "CampusPOIViewController.h"
+#import "LSAppDelegate.h"
+#import "LSLibrary.h"
+#import "LSRestaurant.h"
+#import "LSPrinter.h"
+
+@interface CampusPOIViewController (){
+    int _titleRow[3];
+}
+- (LSAppDelegate *)appDelegate;
+- (void)refreshTitleRow;
+@end
 
 @implementation CampusPOIViewController
 
@@ -34,11 +45,12 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    _libraryExpanded = _restaurantExpanded = _printerExpanded = NO;
+    [self refreshTitleRow];
+	[self addObserver:self forKeyPath:@"libraryExpanded" options:0 context:nil];
+	[self addObserver:self forKeyPath:@"restaurantExpanded" options:0 context:nil];
+	[self addObserver:self forKeyPath:@"printerExpanded" options:0 context:nil];
+
 }
 
 - (void)viewDidUnload
@@ -74,20 +86,64 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+	if ([keyPath isEqualToString:@"libraryExpanded"] | [keyPath isEqualToString:@"restaurantExpanded"] | [keyPath isEqualToString:@"printerExpanded"]){
+		[self refreshTitleRow];
+		[self.tableView reloadData];
+	}
+}
+
+- (LSAppDelegate *)appDelegate
+{
+    return [[UIApplication sharedApplication] delegate];
+}
+
+- (void)refreshTitleRow
+{
+	_titleRow[0] = 0;
+	if (_libraryExpanded) {
+		_titleRow[1] = self.numOfLibrary + 1;
+    } else {
+		_titleRow[1] = _titleRow[0] + 1;
+    }
+	if (_restaurantExpanded){
+		_titleRow[2] = _titleRow[1] + self.numOfRestaurant + 1;
+    } else {
+		_titleRow[2] = _titleRow[1] + 1;
+    }
+}
+
+- (int)numOfLibrary
+{
+	return [[self appDelegate].libraryPOIs count];
+}
+
+- (int)numOfRestaurant
+{
+	return [[self appDelegate].restaurantPOIs count];
+}
+
+- (int)numOfPrinter
+{
+	return [[self appDelegate].printerPOIs count];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    int rowCount = 3;
+	if (_libraryExpanded) rowCount += self.numOfLibrary;
+	if (_restaurantExpanded) rowCount += self.numOfRestaurant;
+	if (_printerExpanded) rowCount += self.numOfPrinter;
+    
+    return rowCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -99,7 +155,25 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    // Configure the cell...
+    int rowNum = indexPath.row;
+	if (rowNum == _titleRow[0]){
+		cell.textLabel.text = @"Library";
+	} else if ( _titleRow[0] < rowNum && rowNum < _titleRow[1]) {
+		LSLibrary *currLibrary = [[self appDelegate].libraryPOIs  objectAtIndex:(rowNum-1)];
+		cell.textLabel.text = currLibrary.location;
+	} else if ( rowNum == _titleRow[1] ) {
+		cell.textLabel.text = @"Restaurant";
+	} else if ( _titleRow[1] < rowNum && rowNum < _titleRow[2]) {
+		int index = rowNum - _titleRow[1];
+		LSRestaurant *currRestaurant = [[self appDelegate].restaurantPOIs objectAtIndex:index-1];
+		cell.textLabel.text = currRestaurant.restaurantName;
+	} else if (rowNum == _titleRow[2]) {
+		cell.textLabel.text = @"Printer";
+	} else if (rowNum > _titleRow [2]) {
+		int index = rowNum - _titleRow[2];
+		LSPrinter *currPrinter = [[self appDelegate].printerPOIs objectAtIndex:index-1];
+		cell.textLabel.text = currPrinter.location;
+	}
     
     return cell;
 }
@@ -147,13 +221,26 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    LSLocation *selectedPOI;
+	int rowNum = indexPath.row;
+    if (rowNum == _titleRow[0]){
+		self.libraryExpanded = !self.libraryExpanded;
+		return;
+	} else if ( _titleRow[0] < rowNum && rowNum < _titleRow[1]) {
+		selectedPOI = [[self appDelegate].libraryPOIs  objectAtIndex:(rowNum-1)];
+	} else if ( rowNum == _titleRow[1] ) {
+		self.restaurantExpanded = !self.restaurantExpanded;
+		return;
+	} else if ( _titleRow[1] < rowNum && rowNum < _titleRow[2]) {
+		int index = rowNum - _titleRow[1];
+		selectedPOI = [[self appDelegate].restaurantPOIs objectAtIndex:index-1];
+	} else if (rowNum == _titleRow[2]) {
+		self.printerExpanded = !self.printerExpanded;
+		return;
+	} else if (rowNum > _titleRow [2]) {
+		int index = rowNum - _titleRow[2];
+		selectedPOI = [[self appDelegate].printerPOIs objectAtIndex:index-1];
+	}
 }
 
 @end
