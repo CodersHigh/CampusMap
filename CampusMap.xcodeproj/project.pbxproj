@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C2E182A170A6D8C00AA4DBA /* LSLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E1823170A6D8C00AA4DBA /* LSLibrary.m */; };
+		2C2E182B170A6D8C00AA4DBA /* LSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E1825170A6D8C00AA4DBA /* LSLocation.m */; };
+		2C2E182C170A6D8C00AA4DBA /* LSPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E1827170A6D8C00AA4DBA /* LSPrinter.m */; };
+		2C2E182D170A6D8C00AA4DBA /* LSRestaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2E1829170A6D8C00AA4DBA /* LSRestaurant.m */; };
 		2C3A9BED1417CD0000F72362 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3A9BEC1417CD0000F72362 /* UIKit.framework */; };
 		2C3A9BEF1417CD0000F72362 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3A9BEE1417CD0000F72362 /* Foundation.framework */; };
 		2C3A9BF51417CD0000F72362 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C3A9BF31417CD0000F72362 /* InfoPlist.strings */; };
@@ -58,6 +62,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C2E1822170A6D8C00AA4DBA /* LSLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSLibrary.h; sourceTree = "<group>"; };
+		2C2E1823170A6D8C00AA4DBA /* LSLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSLibrary.m; sourceTree = "<group>"; };
+		2C2E1824170A6D8C00AA4DBA /* LSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSLocation.h; sourceTree = "<group>"; };
+		2C2E1825170A6D8C00AA4DBA /* LSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSLocation.m; sourceTree = "<group>"; };
+		2C2E1826170A6D8C00AA4DBA /* LSPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPrinter.h; sourceTree = "<group>"; };
+		2C2E1827170A6D8C00AA4DBA /* LSPrinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPrinter.m; sourceTree = "<group>"; };
+		2C2E1828170A6D8C00AA4DBA /* LSRestaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSRestaurant.h; sourceTree = "<group>"; };
+		2C2E1829170A6D8C00AA4DBA /* LSRestaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSRestaurant.m; sourceTree = "<group>"; };
 		2C3A9BE81417CD0000F72362 /* CampusMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C3A9BEC1417CD0000F72362 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2C3A9BEE1417CD0000F72362 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -160,6 +172,14 @@
 		2C3A9BF01417CD0000F72362 /* CampusMap */ = {
 			isa = PBXGroup;
 			children = (
+				2C2E1822170A6D8C00AA4DBA /* LSLibrary.h */,
+				2C2E1823170A6D8C00AA4DBA /* LSLibrary.m */,
+				2C2E1824170A6D8C00AA4DBA /* LSLocation.h */,
+				2C2E1825170A6D8C00AA4DBA /* LSLocation.m */,
+				2C2E1826170A6D8C00AA4DBA /* LSPrinter.h */,
+				2C2E1827170A6D8C00AA4DBA /* LSPrinter.m */,
+				2C2E1828170A6D8C00AA4DBA /* LSRestaurant.h */,
+				2C2E1829170A6D8C00AA4DBA /* LSRestaurant.m */,
 				2C3A9BF91417CD0000F72362 /* LSAppDelegate.h */,
 				2C3A9BFA1417CD0000F72362 /* LSAppDelegate.m */,
 				2C585E1B1418654E00812FB9 /* CampusPOIViewController.h */,
@@ -326,6 +346,10 @@
 				2C3A9BFB1417CD0000F72362 /* LSAppDelegate.m in Sources */,
 				2C585E191418652D00812FB9 /* CampusMapViewController.m in Sources */,
 				2C585E1E1418654E00812FB9 /* CampusPOIViewController.m in Sources */,
+				2C2E182A170A6D8C00AA4DBA /* LSLibrary.m in Sources */,
+				2C2E182B170A6D8C00AA4DBA /* LSLocation.m in Sources */,
+				2C2E182C170A6D8C00AA4DBA /* LSPrinter.m in Sources */,
+				2C2E182D170A6D8C00AA4DBA /* LSRestaurant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
