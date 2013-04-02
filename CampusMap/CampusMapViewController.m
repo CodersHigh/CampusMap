@@ -153,4 +153,94 @@
     }
     [self.campusMapView addAnnotations:selectedPOIs];
 }
+
+- (IBAction)presentARView:(id)sender {
+    _arViewController = [[ARGeoViewController alloc] init];
+	_arViewController.debugMode = YES;
+	
+	_arViewController.delegate = self;
+    
+	_arViewController.scaleViewsBasedOnDistance = YES;
+	_arViewController.minimumScaleFactor = .5;
+	
+	_arViewController.rotateViewsBasedOnPerspective = YES;
+    
+    [_arViewController addCoordinates:[self poiARCoordinatesWithType:self.poiTypeSegControl.selectedSegmentIndex]];
+    _arViewController.centerLocation = [self appDelegate].currUserLocation;
+    
+    [_arViewController startListening];
+    
+    [self presentModalViewController:_arViewController animated:NO];
+    
+    UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(280, 20, 30, 20)];
+    [closeButton setImage:[UIImage imageNamed:@"map_x_button.png"] forState:UIControlStateNormal];
+    [closeButton addTarget:self action:@selector(closeARView:) forControlEvents:UIControlEventTouchUpInside];
+    [_arViewController.ar_overlayView addSubview:closeButton];
+}
+
+- (IBAction)closeARView:(id)sender
+{
+    [_arViewController dismissModalViewControllerAnimated:NO];
+    [self dismissModalViewControllerAnimated:NO];
+}
+
+- (NSArray *)poiARCoordinatesWithType:(int)poiType;
+{
+    NSMutableArray *tempLocationArray = [[NSMutableArray alloc] initWithCapacity:10];
+    NSArray *poiArray;
+    switch (poiType) {
+        case POI_ALL:
+            poiArray = [self appDelegate].allPOIs;
+            break;
+        case POI_LIBRARY:
+            poiArray = [self appDelegate].libraryPOIs;
+            break;
+        case POI_RESTAURANT:
+            poiArray = [self appDelegate].restaurantPOIs;
+            break;
+        case POI_PRINTER:
+            poiArray = [self appDelegate].printerPOIs;
+            break;
+    }
+    
+    for (LSLocation *poiLocation in poiArray) {
+        CLLocation *tempLocation = [[CLLocation alloc] initWithLatitude:poiLocation.latitude longitude:poiLocation.longitude];
+        ARGeoCoordinate *tempCoordinate = [ARGeoCoordinate coordinateWithLocation:tempLocation];
+        tempCoordinate.title = poiLocation.title;
+        tempCoordinate.poiLocation = poiLocation;
+        
+        [tempLocationArray addObject:tempCoordinate];
+    }
+    
+    return (NSArray *)tempLocationArray;
+}
+
+
+#define BOX_WIDTH 150
+#define BOX_HEIGHT 100
+
+- (UIView *)viewForCoordinate:(ARCoordinate *)coordinate {
+    CGRect theFrame = CGRectMake(0, 0, BOX_WIDTH, BOX_HEIGHT);
+	UIView *tempView = [[UIView alloc] initWithFrame:theFrame];
+	
+	//tempView.backgroundColor = [UIColor colorWithWhite:.5 alpha:.3];
+	
+	UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, BOX_WIDTH, 20.0)];
+	titleLabel.backgroundColor = [UIColor colorWithWhite:.3 alpha:.8];
+	titleLabel.textColor = [UIColor whiteColor];
+	titleLabel.textAlignment = UITextAlignmentCenter;
+	titleLabel.text = coordinate.title;
+	[titleLabel sizeToFit];
+	
+	titleLabel.frame = CGRectMake(BOX_WIDTH / 2.0 - titleLabel.frame.size.width / 2.0 - 4.0, 0, titleLabel.frame.size.width + 8.0, titleLabel.frame.size.height + 8.0);
+	
+	UIImageView *pointView = [[UIImageView alloc] initWithFrame:CGRectZero];
+	pointView.image = [(ARGeoCoordinate *)coordinate poiLocation].annotationImage;
+	pointView.frame = CGRectMake((int)(BOX_WIDTH / 2.0 - pointView.image.size.width / 2.0), (int)(BOX_HEIGHT / 2.0 - pointView.image.size.height / 2.0), pointView.image.size.width, pointView.image.size.height);
+    
+	[tempView addSubview:titleLabel];
+	[tempView addSubview:pointView];
+	
+	return tempView;
+}
 @end
