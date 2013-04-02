@@ -7,6 +7,7 @@
 //
 
 #import "LSLocation.h"
+#import "LSAppDelegate.h"
 
 @implementation LSLocation
 
@@ -64,5 +65,26 @@
 }
 
 
+- (int)distance
+{
+    LSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    CLLocation *userLocation = appDelegate.currUserLocation;
+    CLLocation *poiLocation = [[CLLocation alloc] initWithLatitude:self.latitude longitude:self.longitude];
+    CLLocationDistance distanceInMeter = [userLocation distanceFromLocation:poiLocation];
+    
+    return distanceInMeter;
+}
+
+- (NSString *)distanceString
+{
+    CLLocationDistance distanceInMeter = self.distance;
+    NSString *composedString;
+    if (distanceInMeter > 1000){
+        composedString = [NSString stringWithFormat:@"%.2fkm", (distanceInMeter/1000)];
+    } else {
+        composedString = [NSString stringWithFormat:@"%.1fm",distanceInMeter];
+    }
+    return composedString;
+}
 
 @end

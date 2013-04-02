@@ -15,5 +15,5 @@
 
 @property (strong) LSLocation *poiLocation;
 @property (strong, readonly) UILabel *nameLabel;
-
+@property (strong, readonly) UILabel *distanceLabel;
 @end

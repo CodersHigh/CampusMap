@@ -24,4 +24,7 @@
 
 @property (strong, readonly) UIImage *annotationImage;
 
+@property (readonly) int distance;
+@property (strong, readonly) NSString *distanceString;
+
 @end

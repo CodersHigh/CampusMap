@@ -12,9 +12,11 @@
 #import "LSLibrary.h"
 #import "LSRestaurant.h"
 #import "LSPrinter.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface LSAppDelegate (){
     NSDictionary *_poiDictionary;
+    CLLocationManager *_locationManager;
 }
 
 @end
@@ -39,6 +41,13 @@
     self.window.rootViewController = tabBarController;
     //self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    _locationManager = [[CLLocationManager alloc] init];
+    _locationManager.delegate = self;
+    _locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+	_locationManager.distanceFilter = kCLDistanceFilterNone;
+	[_locationManager startUpdatingLocation];
+    
     return YES;
 }
 
@@ -161,4 +170,11 @@
 	return returnDictionary;
 }
 
+#pragma mark - CLLocation Manager Delegate
+- (void)locationManager:(CLLocationManager *)locationManager
+    didUpdateToLocation:(CLLocation *)newLocation
+		   fromLocation:(CLLocation *)oldLocation;
+{
+	_currUserLocation = newLocation;
+}
 @end

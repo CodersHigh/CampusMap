@@ -61,6 +61,7 @@
 		2CB4B49F141F316B004D264D /* subcell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB4B47A141F316B004D264D /* subcell@2x.png */; };
 		2CCD57A6170A871700FBB699 /* POITypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD57A3170A871700FBB699 /* POITypeCell.m */; };
 		2CCD57A7170A871700FBB699 /* POIItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD57A5170A871700FBB699 /* POIItemCell.m */; };
+		2CCD57AA170B094700FBB699 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CCD57A9170B094700FBB699 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +132,7 @@
 		2CCD57A4170A871700FBB699 /* POIItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POIItemCell.h; sourceTree = "<group>"; };
 		2CCD57A5170A871700FBB699 /* POIItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POIItemCell.m; sourceTree = "<group>"; };
 		2CCD57A8170A878400FBB699 /* Function.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Function.h; sourceTree = "<group>"; };
+		2CCD57A9170B094700FBB699 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 		2C3A9BDD1417CCFF00F72362 = {
 			isa = PBXGroup;
 			children = (
+				2CCD57A9170B094700FBB699 /* Default-568h@2x.png */,
 				2C3A9BF01417CD0000F72362 /* CampusMap */,
 				2C3A9BEB1417CD0000F72362 /* Frameworks */,
 				2C3A9BE91417CD0000F72362 /* Products */,
@@ -179,10 +182,10 @@
 		2C3A9BF01417CD0000F72362 /* CampusMap */ = {
 			isa = PBXGroup;
 			children = (
-				2C2E1822170A6D8C00AA4DBA /* LSLibrary.h */,
-				2C2E1823170A6D8C00AA4DBA /* LSLibrary.m */,
 				2C2E1824170A6D8C00AA4DBA /* LSLocation.h */,
 				2C2E1825170A6D8C00AA4DBA /* LSLocation.m */,
+				2C2E1822170A6D8C00AA4DBA /* LSLibrary.h */,
+				2C2E1823170A6D8C00AA4DBA /* LSLibrary.m */,
 				2C2E1826170A6D8C00AA4DBA /* LSPrinter.h */,
 				2C2E1827170A6D8C00AA4DBA /* LSPrinter.m */,
 				2C2E1828170A6D8C00AA4DBA /* LSRestaurant.h */,
@@ -344,6 +347,7 @@
 				2CB4B49D141F316B004D264D /* restaurant_annotation@2x.png in Resources */,
 				2CB4B49E141F316B004D264D /* subcell.png in Resources */,
 				2CB4B49F141F316B004D264D /* subcell@2x.png in Resources */,
+				2CCD57AA170B094700FBB699 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,9 +10,6 @@
 
 @implementation POIItemCell
 
-@synthesize poiLocation=_poiLocation;
-@synthesize nameLabel=_nameLabel;
-
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -26,8 +23,14 @@
         _nameLabel.backgroundColor = [UIColor clearColor];
         _nameLabel.font = [UIFont boldSystemFontOfSize:18];
         _nameLabel.textColor = [UIColor lightGrayColor];
+        
+        _distanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(240, 20, 80, 12)];
+        _distanceLabel.backgroundColor = [UIColor clearColor];
+        _distanceLabel.font = [UIFont boldSystemFontOfSize:11];
+        _distanceLabel.textColor = [UIColor lightGrayColor];
                 
         [self addSubview:_nameLabel];
+        [self addSubview:_distanceLabel];
     }
     return self;
 }
@@ -44,5 +47,6 @@
     _poiLocation = poiLocation;
     
     _nameLabel.text = _poiLocation.title;
+    _distanceLabel.text = _poiLocation.distanceString;
 }
 @end

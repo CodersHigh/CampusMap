@@ -50,6 +50,8 @@
 {
     [super viewDidLoad];
 
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    
     _libraryExpanded = _restaurantExpanded = _printerExpanded = NO;
     [self refreshTitleRow];
 	[self addObserver:self forKeyPath:@"libraryExpanded" options:0 context:nil];

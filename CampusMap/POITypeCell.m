@@ -9,10 +9,6 @@
 #import "POITypeCell.h"
 
 @implementation POITypeCell
-@synthesize poiType=_poiType, numberOfItems=_numberOfItems;
-@synthesize iconImageView=_iconImageView;
-@synthesize typeLabel=_typeLabel;
-@synthesize numberOfPOILabel=_numberOfPOILabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -25,7 +21,7 @@
         
         _iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 8, 62, 37)];
         _typeLabel = [[UILabel alloc] initWithFrame:CGRectMake(80, 10, 150, 27)];
-        _numberOfPOILabel = [[UILabel alloc] initWithFrame:CGRectMake(80, 35, 150, 14)];
+        _numberOfPOILabel = [[UILabel alloc] initWithFrame:CGRectMake(230, 20, 100, 14)];
         
         _typeLabel.backgroundColor = [UIColor clearColor];
         _typeLabel.font = [UIFont boldSystemFontOfSize:24];
@@ -72,4 +68,8 @@
     _iconImageView.image = typeIconImage;
 }
 
+- (void)setNumberOfItems:(int)numberOfItems
+{
+    _numberOfPOILabel.text = [NSString stringWithFormat:@"%d Items", numberOfItems];
+}
 @end
